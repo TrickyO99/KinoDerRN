@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KINO DER RN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="booth">
+
+  <div class="booth-wall">
+    <div class="window">
+      <div class="window-sky"></div>
+      <div class="window-bar"></div>
+      <div class="window-bar"></div>
+      <div class="window-bar"></div>
+    </div>
+    <canvas class="prop prop-papers-wall" width="36" height="36"></canvas>
+  </div>
+
+  <div class="booth-desk">
+    <div class="lamp-col">
+      <canvas class="prop prop-lamp" width="48" height="48"></canvas>
+      <div class="lamp-glow"></div>
+    </div>
+
+    <div class="monitor">
+      <div class="monitor-bezel">
+        <div class="crt-overlay"></div>
+
+        <div id="app">
+
+          <section id="screen-menu" class="screen">
+            <h1 class="title">KINO DER RN</h1>
+            <p class="subtitle">Une armée de bots d'extrême droite débarque sous ton tweet.<br>Tiens bon jusqu'à la dernière vague.</p>
+            <div id="tweet-choices" class="tweet-grid"></div>
+            <p class="hint">Choisis un tweet pour lancer la partie. Pendant le jeu : clique une réplique, ou appuie sur 1 / 2 / 3.<br>Lis bien chaque réponse — certaines marquent des points, d'autres te coûtent cher. Et tout le monde n'est pas un troll.<br>🔔 Une notification peut revenir répondre à ce que tu viens de dire — rate son délai et c'est terminé.<br>🕵️ Parfois tu peux tester si un compte est vraiment un bot. Si c'est le cas, gros bonus. Si c'est une vraie personne… fin de partie.</p>
+          </section>
+
+          <section id="screen-game" class="screen hidden">
+            <div class="hud">
+              <div class="hud-block">
+                <span class="hud-label">VAGUE</span>
+                <span id="hud-wave" class="hud-value">1</span>
+              </div>
+              <div class="hud-block hud-hp">
+                <span class="hud-label">CRÉDIBILITÉ</span>
+                <div class="hp-bar-track"><div id="hp-bar-fill" class="hp-bar-fill"></div></div>
+              </div>
+              <div class="hud-block">
+                <span class="hud-label">SCORE</span>
+                <span id="hud-score" class="hud-value">0</span>
+              </div>
+            </div>
+
+            <div class="pinned-tweet">
+              <canvas id="pinned-avatar" class="pinned-avatar" width="40" height="40"></canvas>
+              <div class="tweet-body">
+                <div class="tweet-handle">@toi · à l'instant</div>
+                <div id="pinned-tweet-text" class="tweet-text"></div>
+                <div id="pinned-tweet-stats" class="tweet-stats"></div>
+              </div>
+            </div>
+
+            <div id="wave-banner" class="wave-banner hidden"></div>
+
+            <div id="notification-lane" class="notification-lane"></div>
+
+            <div id="bot-lane" class="bot-lane"></div>
+          </section>
+
+          <section id="screen-gameover" class="screen hidden">
+            <h1 class="title small">FIN DE PARTIE</h1>
+            <p id="gameover-subtitle" class="subtitle">Les notifications ont fini par t'avoir.</p>
+            <div class="stats-box">
+              <div class="stat-row"><span class="hud-label">Vagues survécues</span><span id="final-waves" class="hud-value">0</span></div>
+              <div class="stat-row"><span class="hud-label">Bots éliminés</span><span id="final-kills" class="hud-value">0</span></div>
+              <div class="stat-row"><span class="hud-label">Score final</span><span id="final-score" class="hud-value">0</span></div>
+            </div>
+            <button id="btn-replay" class="pixel-btn">REJOUER</button>
+          </section>
+
+        </div>
+
+      </div>
+      <div class="monitor-stand-neck"></div>
+      <div class="monitor-stand-base"></div>
+    </div>
+
+    <div class="desk-props">
+      <canvas class="prop prop-stamp" width="26" height="26"></canvas>
+      <canvas class="prop prop-coffee" width="22" height="26"></canvas>
+      <canvas class="prop prop-papers" width="30" height="26"></canvas>
+    </div>
+  </div>
+
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
